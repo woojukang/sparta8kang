@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>8기1주차 과제</title>
+    <style>
+        .my-container {
+            width: 900px;
+            margin: 10px auto;
+        }
+    </style>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <!-- style -->
+    <style type="text/css">
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+
+        .comment {
+            color: blue;
+            font-weight: bold;
+        }
+        .nemobox {
+
+            margin: auto;
+            margin-bottom: 2px;
+            border: 1px solid white;
+            width: 65000px;
+            padding: 5px;
+            border-radius: 7px;
+        }
+        .button
+
+{
+
+   margin: auto ;
+
+   width: 50%;
+   
+   text-align: center; 
+}
+
+.jb-xx-large { 
+    font-size: xx-large; }
+
+
+    </style>
+  </head>
+  <body>
+    <div>
+    <div class= "nemobox" style="width: 45rem;">
+    <img src="https://c4.wallpaperflare.com/wallpaper/740/666/385/iron-man-movies-marvel-comics-wallpaper-preview.jpg" class="img-fluid" alt="Responsive image">
+    <p><span class="jb-xx-large">아이언맨을 팝니다.</span>가격:3000원/개당</p>
+        <p class="lead"><span>이 아이언맨은 사실 특별한 힘을 가지고 있습니다.</span></p>
+        
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1" >주문자이름</span>
+        </div>
+        <input type="text" class="form-control" placeholder="" 
+        aria-label="" aria-describedby="basic-addon1" id = "user_name">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">수량</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" >
+          <option value="" selected>--수량을 선택하세요--</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1" >주소</span>
+        </div>
+        <input type="adress" class="form-control" placeholder="" 
+        aria-label="" aria-describedby="basic-addon1" id = "user_address">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">전화번호</span>
+        </div>
+        <input type="number" class="form-control" placeholder="" 
+        aria-label="" aria-describedby="basic-addon1" id = "user_phone">
+      </div>
+    <div class="button">
+        <a href="#" class="btn btn-primary" onclick="onorder()">주문하기</a>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        function onorder()
+     {
+         if ($("#user_name").val() == "")
+           {
+             alert("이름을 입력하세요.");
+         }  else if ($("#inputGroupSelect01 option:selected").val() == "")
+           {
+             alert("수량을 입력하세요.");
+         }
+         
+         else if ($("#user_address").val() == "")
+           {
+             alert("주소를 입력하세요.");
+         }
+         else if ($("#user_phone").val() == "")
+           {
+             alert("전화번호를 입력하세요.");
+         }
+         else {
+            alert("주문 되었습니다.");
+         }
+        
+         
+     }
+
+       </script>
+  </body>
+</html>

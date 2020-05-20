@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .my-container {
+            width: 900px;
+            margin: 10px auto;
+        }
+    </style>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <!-- style -->
+    <style type="text/css">
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+
+        .comment {
+            color: blue;
+            font-weight: bold;
+        }
+        .nemobox {
+
+            margin: auto;
+            margin-bottom: 20px;
+            border: 3px solid black;
+            width: 500px;
+            padding: 20px;
+            border-radius: 7px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron">
+        <h1 class="display-4">나홀로 링크 메모장!</h1>
+        <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button" onclick="onToggle()" id = "p_button">포스팅박스 열기</a>
+        </p>
+    </div>
+    <form>
+        <div class="nemobox" id = "nemobox">
+        <div class="form-group">
+          <label for="exampleInputEmail1">아티클URL</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        <button type="submit" class="btn btn-primary">기사저장</button>
+      </form>
+    </div>
+    <div id = "card_content" class="card-columns">
+    <div class="card">
+        <img class="card-img-top"
+            src="https://3.bp.blogspot.com/-XZUTX-kT6GY/W2MSmhGnGEI/AAAAAAAADU0/EgTbEcHtG60erDim_HGWNqLPlM8-8AF8ACLcBGAs/s1600/%25EB%258B%25A4%25EC%259A%25B4%25EB%25A1%259C%25EB%2593%259C.gif"
+            alt="Card image cap">
+        <div class="card-body">
+            <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+            <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+            <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+        </div>
+    </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ <script>
+     $("#nemobox").hide();
+
+    
+
+     function make_card()
+{
+    let card = `
+    <div class="card">
+        <img class="card-img-top"
+            src="https://3.bp.blogspot.com/-XZUTX-kT6GY/W2MSmhGnGEI/AAAAAAAADU0/EgTbEcHtG60erDim_HGWNqLPlM8-8AF8ACLcBGAs/s1600/%25EB%258B%25A4%25EC%259A%25B4%25EB%25A1%259C%25EB%2593%259C.gif"
+            alt="Card image cap">
+        <div class="card-body">
+            <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+            <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+            <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+        </div>
+    </div>
+    `;
+    $("#card_content").append(card);
+}
+for(let i =0 ; i < 9 ; i++){
+    make_card();
+}
+
+     function onToggle(){
+        if ($("#nemobox").css("display")=="none") {
+            $("#nemobox").show();
+            $("#p_button").text("포스팅박스 닫기");
+        } else {
+            $("#nemobox").hide();
+            $("#p_button").text("포스팅박스 열기");
+        }
+        
+     }
+ </script>
+</body>
+</html>

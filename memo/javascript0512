@@ -1,0 +1,10 @@
+function mise_list() {
+
+  for (let i = 0; i < mise_list.length; i++) {
+    let mise = mise_list[i];
+    if (mise[IDEX_MVL]<40) {
+      console.log(mise[MSRRGN_NM]);
+    }
+  }
+  return count;
+}
